@@ -34,9 +34,9 @@ Works on Linux, OS X and Windows. For Windows follow the [pre requisites](http:/
 
     npm install blessed blessed-contrib
 
-##Usage
+## Usage
 
-You can use any of the default widgets of [blessed](https://github.com/chjj/blessed) (texts, lists and etc) or the widgets added in blessed-contrib (described bellow). A [layout](#layouts) is optional but usefull for dashboards. The widgets in blessed-contrib follow the same usage pattern:
+You can use any of the default widgets of [blessed](https://github.com/chjj/blessed) (texts, lists and etc) or the widgets added in blessed-contrib (described below). A [layout](#layouts) is optional but useful for dashboards. The widgets in blessed-contrib follow the same usage pattern:
 
 `````javascript
    var blessed = require('blessed')
@@ -279,7 +279,7 @@ Please see the **examples/lcd.js** for an example. The example provides keybindi
 
 ### Picture
 
-(Also check the new blessed [png implementation](https://github.com/chjj/blessed#png-from-box) which has several benefits over this one)
+(Also check the new blessed [image implementation](https://github.com/chjj/blessed#image-from-box) which has several benefits over this one.)
 
 <img src="./docs/images/picture.png" alt="log" width="180">
 
@@ -392,12 +392,12 @@ note: only png images are supported
 
 Every node is a hash and it can have custom properties that can be used in "select" event callback. However, there are several special keys :
 
- * name
+* name
   * *Type* : `string`
   * *Desc* : Node name
   * If the node isn't the root and you don't specify the name, will be set to hash key
   * *Example* : <code>{ name: 'Fruit'}</code>
- * children
+* children
   * *Type* : `hash` or `function(node){ return children }`
   * *Desc* : Node children.
   * The function must return a hash that could have been used as children property
@@ -405,14 +405,14 @@ Every node is a hash and it can have custom properties that can be used in "sele
   * *Example* :
     * Hash : <code>{'Fruit':{ name: 'Fruit', children:{ 'Banana': {}, 'Cherry': {}}}}</code>
     * Function : see `examples/explorer.js`
- *  childrenContent
+* childrenContent
   * *Type* : `hash`
   * *Desc* : Children content for internal usage *DO NOT MODIFY*
   * If `node.children` is a hash, `node.children===node.childrenContent`
   * If `node.children` is a function, it's used to store the `node.children()` result
   * You can read this property, but you should never write it.
   * Usually this will be used to check `if(node.childrenContent)` in your `node.children` function to generate children only once
- * extended
+* extended
   * *Type* : `boolean`
   * *Desc* : Determine if this node is extended
   * No effect when the node have no child
